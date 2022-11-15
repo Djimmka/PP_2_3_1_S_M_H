@@ -1,10 +1,8 @@
 package web.controller;
 
-//import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-//import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import web.models.User;
 import web.servise.UserService;
@@ -21,7 +19,7 @@ public class UserController {
     }
 
     @GetMapping()
-    public String index(Model model){
+    public String index(Model model) {
         //userService.gen5Users();
         model.addAttribute("users", userService.findAll());
         return "users/index";
@@ -34,7 +32,9 @@ public class UserController {
     }
 
     @GetMapping("/new")
-    public String newUser(@ModelAttribute("user") User user) {return "users/new";}
+    public String newUser(@ModelAttribute("user") User user) {
+        return "users/new";
+    }
 
     @PostMapping
     public String create(@ModelAttribute("user") User user) {
@@ -52,7 +52,7 @@ public class UserController {
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user,
                          @PathVariable("id") long id) {
-        userService.update(id,user);
+        userService.update(id, user);
         return "redirect:/users";
     }
 

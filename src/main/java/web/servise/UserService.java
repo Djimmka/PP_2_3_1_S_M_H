@@ -20,7 +20,7 @@ public class UserService {
         this.usersRepository = usersRepository;
     }
 
-    public List<User> findAll(){
+    public List<User> findAll() {
         return usersRepository.findAll();
     }
 
@@ -30,7 +30,7 @@ public class UserService {
     }
 
     @Transactional
-    public void save(User user){
+    public void save(User user) {
         usersRepository.save(user);
     }
 
@@ -46,9 +46,9 @@ public class UserService {
     }
 
     @Transactional
-    public void gen5Users(){
-        for (int i =1; i<6; i++) {
-            User user = new User(2220+i, "lastName_"+i, "name_"+i);
+    public void gen5Users() {
+        for (int i = 1; i < 6; i++) {
+            User user = new User(2220 + i, "lastName_" + i, "name_" + i);
             update((long) i, user);
         }
     }

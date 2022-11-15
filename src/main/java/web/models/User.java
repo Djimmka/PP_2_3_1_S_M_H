@@ -15,12 +15,12 @@ public class User {
     private String lastName;
     private int passport;
 
-    public User(String name, String lastName){
+    public User(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
     }
 
-    public User(int passport, String name, String lastName){
+    public User(int passport, String name, String lastName) {
         this(name, lastName);
         this.passport = passport;
     }
@@ -44,11 +44,12 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    public String getLastName(){
+
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName){
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
