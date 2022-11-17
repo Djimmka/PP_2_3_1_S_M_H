@@ -5,8 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import web.models.User;
 
 import java.util.List;
-@Service
-@Transactional
+
 public interface UserService {
     public List<User> findAll();
     public User findById(long id);
